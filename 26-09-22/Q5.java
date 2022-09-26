@@ -1,6 +1,6 @@
 // Shresth Sonkar
 // 20214272
-// Q6
+// Q5
 
 import java.util.*;
 class TestScores
@@ -9,9 +9,11 @@ class TestScores
 	private int score2;
 	private int score3;
 	
-	Circle(double radius)
+	TestScores()
 	{
-		this.radius = radius;
+		score1 = 0;
+		score2 = 0;
+		score3 = 0;
 	}
 	
 	int getScore1()
@@ -43,6 +45,11 @@ class TestScores
 	{
 		this.score3 = score3;
 	}
+
+	double getAvgScore()
+	{
+		return ( getScore1() + getScore2() + getScore3() )/3.0;
+	}
 }
 
 class Q5
@@ -50,26 +57,32 @@ class Q5
 	public static void main(String args[])
 	{
 		Scanner ss = new Scanner(System.in);
-		System.out.println("Enter radius : ");
-		double r = ss.nextDouble();
-		TestScores c1 = new TestScores(r);
-		System.out.println("Area = " + c1.getArea());
-		System.out.println("Circumference = " + c1.getCircumference());
-		System.out.println("Diameter = " + c1.getDiameter());
+		TestScores t = new TestScores();
+		
+		System.out.println("Enter Score 1 : ");
+		t.setScore1(ss.nextInt());
+		System.out.println("Enter Score 2 : ");
+		t.setScore2(ss.nextInt());
+		System.out.println("Enter Score 3 : ");
+		t.setScore3(ss.nextInt());
+		
+		System.out.println("Avg Score = " + t.getAvgScore());
 	}
 
 }
 
 /* OUTPUTS
 
-~/20214272/OOPLAB/26-09-22 $ javac Q6.java
-~/20214272/OOPLAB/26-09-22 $ java Q6
-Enter radius : 
-4.5
-Area = 63.6171975
-Circumference = 28.27431
-Diameter = 9.0
-~/20214272/OOPLAB/26-09-22 $
+~/desktop/cse/ASSGN/OOLAB/26-09-22 $ javac Q5.java
+~/desktop/cse/ASSGN/OOLAB/26-09-22 $ java Q5
+Enter Score 1 : 
+98
+Enter Score 2 : 
+94
+Enter Score 3 : 
+91
+Avg Score = 94.33333333333333
+~/desktop/cse/ASSGN/OOLAB/26-09-22 $ 
 
 */
 
